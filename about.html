@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cutex</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="url">
+                <span><strong>Cutex</strong></span>
+            </div>
+            <div class="nav-items">
+                <nav>
+                    <a href="about.html"><u>About</u></a>
+                    <a href="projects.html">Projects</a>
+                </nav>
+<div class="theme-toggle">
+    <!-- Embed the external SVG file -->
+    <img src="ic_sun.svg" alt="Sun Icon" width="24" height="24">
+</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-section">
+    <h1 style="font-size: 35px;">About</h1>
+    <div class="content-wrapper">
+        <div class="text-content">
+            <p>Hi, I’m Cutex, and welcome to my personal website!</p><br>
+<p>
+    I specialize in Android development, leveraging my expertise in software engineering to create innovative solutions. With a deep passion for technology, I enjoy exploring the intricacies of application development and reverse engineering.
+</p>
+           
+        </div>
+        <img src="ic_cutex.png" alt="cutex profile picture" class="profile-pic">
+    </div>
+             <p>
+                For a deeper dive into my work and creations, feel free to explore the <a href="projects.html">Projects</a> page.
+            </p>
+            <br>
+            <br>
+            <h1>Links</h1>
+        <p><a href="https://www.github.com/mrcutex">Github</a></p>
+        <p><a href="https://telegram.me/mrcutex">Telegram</a></p>
+</section>
+
+        
+    </main>
+</body>
+
+<script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+
+    // Check for saved user preference for light/dark mode
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+        // Switch icon to moon if light mode is saved
+        if (savedTheme === 'light-mode') {
+            themeToggle.innerHTML = '<img src="ic_moon.svg" alt="Moon Icon" width="24" height="24">';
+        }
+    }
+
+    themeToggle.addEventListener('click', function() {
+        // Toggle light-mode class
+        body.classList.toggle('light-mode');
+
+        // Switch icons between sun and moon
+        if (body.classList.contains('light-mode')) {
+            themeToggle.innerHTML = '<img src="ic_moon.svg" alt="Moon Icon" width="24" height="24">';
+            localStorage.setItem('theme', 'light-mode');
+        } else {
+            themeToggle.innerHTML = '<img src="ic_sun.svg" alt="Sun Icon" width="24" height="24">';
+            localStorage.removeItem('theme');  // Default is dark mode
+        }
+    });
+</script>
+
+</html>

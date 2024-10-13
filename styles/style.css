@@ -1,0 +1,289 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+
+}
+
+theme-toggle {
+    width: 24px;
+    height: 24px;
+    background: url('sun-icon.svg') no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #202122;
+    color: #BFBCB9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+
+/* Fixed Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add bottom elevation */
+    background-color: #232425;  /* Dark grey for header */
+    z-index: 1000; /* Ensure it stays on top of the content */
+}
+/* Right-aligned Navigation and Theme Toggle */
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.url {
+     /* Light grey for the domain name */
+    font-size: 18px;
+    
+}
+
+nav{
+    align-content: right;
+    justify-self: right;
+}
+
+nav a {
+    margin-right: 20px;
+    color: #BFBCB9;
+      /* Light grey for links */
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+
+nav a:hover {
+    color: #fff;  /* White on hover */
+}
+.theme-toggle {
+    width: 24px;
+    height: 24px;
+    background: url('ic_sun.png') no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin-top: 90px; /* Add margin to compensate for fixed header */
+}
+
+.profile-pic {
+  max-width: 512px;
+    height: auto;
+    border-radius: 100%;
+    border: 3px solid #505152;  /* White border for the profile picture */
+    margin-bottom: 20px;
+}
+span {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+h1 {
+    font-size: 39px;
+    font-weight: bold;
+     color: #BFBCB9;
+   
+}
+
+.desc {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #BFBCB9; /* Light grey text */
+}
+
+p {
+    font-size: 18px;
+    margin: 5px;
+    
+    color: #BFBCB9; /* Light grey text */
+}
+
+
+.aboutLinkText {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #BFBCB9; /* Light grey text */
+}
+
+.about-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.about-section h1 {
+    font-size: 36px;
+    color: #BFBCB9;
+    margin-bottom: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.button {
+  background: linear-gradient(90deg, #505152, #6A6B6C); /* Dark grey gradient for buttons */
+  color: #BFBCB9; /* Light grey text to match your theme */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 5px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.1); /* Softer white for the hover effect */
+  transition: all 0.4s ease;
+  transform: translateY(0%);
+}
+
+.button:hover::before {
+  top: 0;
+  transform: translateY(-100%);
+}
+
+.button:hover {
+  background-color: #3C3D3E; /* Slightly lighter on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Darker shadow effect */
+  transform: scale(1.1);
+}
+
+li {
+    font-size: 20px;
+    font-weight: bold;
+     color: #BFBCB9;
+    
+}
+.list {
+    
+    margin-bottom: 40px;
+}
+/* Social Links */
+.social-links img {
+    width: 32px;
+    height: 32px;
+    margin: 20px;
+   filter: invert(50%);
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav a {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+/* Light Mode Styles */
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #ffffff; /* Light background */
+    color: #333333; /* Darker text for light mode */
+}
+
+body.light-mode header {
+    background-color: #ffffff; /* Lighter header */
+    color: #333333;
+}
+
+body.light-mode nav a {
+    color: #333333; /* Dark text for links in light mode */
+}
+
+body.light-mode nav a:hover {
+    color: #000; /* Darker hover */
+}
+
+body.light-mode .button {
+    background: linear-gradient(90deg, #e0e0e0, #f5f5f5); /* Light gradient for buttons */
+    color: #333333; /* Darker button text */
+}
+
+body.light-mode .button:hover {
+    background-color: #d3d3d3; /* Light hover effect */
+}
+
+body.light-mode h1,
+body.light-mode p,
+body.light-mode .desc,
+body.light-mode .list li {
+    color: #333333; /* Dark text in light mode */
+}
+
+body.light-mode .profile-pic {
+    border: 3px solid #d3d3d3; /* Lighter border in light mode */
+}
+

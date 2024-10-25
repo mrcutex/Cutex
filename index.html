@@ -17,7 +17,7 @@
     <header>
         <div class="navbar">
             <div class="url">
-                <span><strong>Cutex</strong></span>
+                <a style="text-decoration: none"href="index.html"><span><strong>Cutex</strong></span></a>
             </div>
             <div class="nav-items">
                 <nav>
@@ -32,21 +32,21 @@
     </header>
 
     <main>
-        <section class="profile-section">
-            <img src="ic_cutex.png" alt="cutex profile picture" class="profile-pic">
-            <h1>Cutex</h1>
-            <p class="desc">Android Developer & Reverse Engineer</p>
-            <div class="container">
-                <div onclick="location.href='about.html';" class="button about">About</div>
-                <div onclick="location.href='projects.html';" class="button project">Project</div>
-            </div>
+    <section class="profile-section section-hidden">
+        <img src="ic_cutex.png" alt="cutex profile picture" class="profile-pic">
+        <h1>Cutex</h1>
+        <p class="desc">Android Developer & Reverse Engineer</p>
+        <div class="container">
+            <div onclick="location.href='about.html';" class="button about">About</div>
+            <div onclick="location.href='projects.html';" class="button project">Project</div>
+        </div>
 
-            <div class="social-links">
-                <a href="https://www.github.com/mrcutex"><img src="ic_github.svg" alt="GitHub"></a>
-                <a href="https://telegram.me/mrcutex"><img src="ic_telegram.svg" alt="Telegram"></a>
-            </div>
-        </section>
-    </main>
+        <div class="social-links">
+            <a href="blogs.html"><img src="ic_github.svg" alt="GitHub"></a>
+            <a href="https://telegram.me/mrcutex"><img src="ic_telegram.svg" alt="Telegram"></a>
+        </div>
+    </section>
+</main>
 </body>
 
 <script>
@@ -77,6 +77,36 @@
             localStorage.removeItem('theme');  // Default is dark mode
         }
     });
+
+// Scroll animation for sections
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('section-visible');
+        }
+    });
+});
+
+// Adding observer to each section
+document.querySelectorAll('section').forEach(section => {
+    section.classList.add('section-hidden');
+    observer.observe(section);
+});
+
+
+const profilePic = document.querySelector('.profile-pic');
+
+profilePic.addEventListener('click', () => {
+    // Adding bounce effect after click
+    setTimeout(() => {
+        profilePic.style.transform = 'rotateY(0deg) scale(1)'; // Reset rotation and scale back to normal
+        profilePic.style.opacity = '1'; // Reset opacity
+    }, 800); // Reset after 800ms to match the CSS animation time
+});
+
 </script>
+
+
+
 
 </html>
